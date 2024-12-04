@@ -5,16 +5,17 @@
   "projects": {
     "To-Do-APP": {
       "projectType": "application",
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",  
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/to-do-app",
+            "outputPath": "dist/",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -29,7 +30,11 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/"
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {

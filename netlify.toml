@@ -1,0 +1,9 @@
+[build]
+    base = "to-do-app"
+    command = "npm run build:prod"
+    publish = "disct/browser"
+
+    [[rediresct]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
