@@ -15,7 +15,6 @@
           "options": {
             "outputPath": "dist/to-do-app",
             "index": "src/index.html",
-            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -34,7 +33,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "baseHref": "/" 
           },
           "configurations": {
             "production": {
