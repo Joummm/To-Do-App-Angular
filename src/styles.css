@@ -1,1 +1,277 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Global Style */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes full height */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.5;
+}
+
+/* Main Container */
+.container {
+    flex: 1; /* Makes the container take the remaining space */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    font-size: 24px;
+}
+
+body.dark header {
+    background-color: #6200ea;
+}
+
+/* Buttons and Inputs */
+button, input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Button ADD */
+button.add-task {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    transition: background-color 0.3s ease;
+}
+
+button.add-task:hover {
+    background-color: #0056b3;
+}
+
+/* Task List */
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.task .completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button.remove-task {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+button.remove-task:hover {
+    background-color: #a71d2a;
+}
+
+/* White System */
+body.light {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --card-bg-color: #fff;
+    --button-bg-color: #007bff;
+    --button-text-color: #fff;
+}
+
+/* Black System */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg-color: #1f1f1f;
+    --button-bg-color: #bb86fc;
+    --button-text-color: #000;
+}
+
+/* Button Toggle Theme */
+.theme-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.toggle-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light .toggle-button {
+    background-color: #007bff;
+    color: #fff;
+}
+  
+body.dark .toggle-button {
+    background-color: #bb86fc;
+    color: #000;
+}
+  
+.toggle-button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+/* Centralizando elementos em dispositivos móveis */
+header, .theme-toggle, .container {
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* Styling for .todo-input */
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.todo-input button {
+    padding: 8px 16px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.todo-input button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de input e botão no modo escuro */
+body.dark .todo-input input {
+    background-color: #444;
+    color: #e0e0e0;
+    border: 1px solid #666;
+}
+
+body.dark .todo-input button {
+    background-color: #6200ea;
+}
+
+body.dark .todo-input button:hover {
+    background-color: #3700b3;
+}
+
+/* Styling for .todo-item */
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.todo-item span {
+    margin-left: 10px;
+}
+
+body.light .todo-item {
+    background-color: #fff;
+    color: #333;
+}
+
+body.dark .todo-item {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark .todo-item span {
+    color: #e0e0e0;
+}
+
+/* Styling for .task-list */
+.task-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list .task {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+body.dark .task-list .task {
+    background-color: #1f1f1f;
+}
+
+/* Responsividade e ajustes no modo escuro */
+body.light {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    position: fixed; /* Fixa o footer no fundo */
+    bottom: 0; /* Garante que ele fique no fundo da página */
+    left: 0;
+    width: 100%; /* Faz o footer ocupar toda a largura */
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    border-top: 1px solid var(--footer-border-color);
+    font-size: 14px;
+}
+
+/* Modo Claro */
+body.light footer {
+    --footer-bg-color: #f1f1f1;
+    --footer-text-color: #333;
+    --footer-border-color: #ddd;
+}
+
+/* Modo Escuro */
+body.dark footer {
+    --footer-bg-color: #222;
+    --footer-text-color: #e0e0e0;
+    --footer-border-color: #444;
+}

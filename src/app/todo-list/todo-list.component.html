@@ -1,0 +1,22 @@
+<!-- <div class="task-list">
+    <div *ngFor="let task of tasks" class="task">
+        <input 
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleTaskCompletion(task.id)"
+        />
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+        <button (click)="removeTask(task.id)">Delete</button>
+    </div>
+</div> -->
+
+<div class="task-list">
+    <div *ngFor="let task of tasks" class="task">
+      <span [class.completed]="task.completed">{{ task.title }}</span>
+      <div>
+        <button (click)="toggleTaskCompletion(task.id)">✔</button>
+        <button class="remove-task" (click)="removeTask(task.id)">✖</button>
+      </div>
+    </div>
+  </div>
+  
